@@ -1,7 +1,7 @@
 # ESP8266 OTA build 496 — USB bench test only
 
-This signed image tests bounded HTTPS Range requests, retry after a timed-out
-request, and whole-image RSA verification on the single USB bench board
-`WT-B2870BDECA20`. It is not approved for customer rollout until the board
-boots build 496, reconnects to MQTT, retains identity and settings, and
-survives a power cycle.
+This signed image **passed the USB bench OTA test** on `WT-B2870BDECA20`:
+the full file downloaded, its RSA signature verified, the board booted build
+496, reconnected to MQTT, and retained its identity and saved settings after
+a reset. The bench board had no ultrasonic sensor or pump attached, so this
+image is **not yet approved for customer rollout** without an integrated pilot.
