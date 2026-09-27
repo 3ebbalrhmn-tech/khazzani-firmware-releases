@@ -1,9 +1,10 @@
 # ESP8266 OTA build 497 — USB bench test only
 
-This signed image adds a retained `installed` result after the new firmware
-boots and reconnects to MQTT. It uses the bounded HTTPS Range downloader that
-passed the build 496 USB bench test. Build 497 is for the single USB bench
-board `WT-B2870BDECA20` until installation and status reporting pass.
+This signed image **passed the USB bench OTA installation** on
+`WT-B2870BDECA20`. Two timed-out Range requests retried successfully; the
+board booted build 497 and reconnected to MQTT. However, its retained OTA
+result remained `downloading` because the earlier build 496 did not save the
+target-build field. Build 498 adds a backward-compatible status migration.
 
-No ultrasonic sensor or pump is connected to that board. Customer rollout
-requires a separate integrated pilot with both components attached.
+No ultrasonic sensor or pump is connected to that board. Build 497 is **not
+approved for customer rollout** without a separate integrated pilot.
